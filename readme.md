@@ -57,7 +57,7 @@ El archivo `extract_item_data.py`:
 **Nota:** Inicialmente, en el [primer commit](https://github.com/juanm-ot/api-etl-visualization/commit/82c3ab2068567bae2cb8b930711e4836a4012b16#diff-a37f5d29d320a8012836a2fe535b1bafef9e24461d1effd9a9decf75fd211a80), se proceso la data en un solo hilo usando un for, pero este proceso consumia mucho tiempo. Un estimado de 6 minutos para extraer la data; por esta razon, se investigo un metodo para acelerar el tiempo y optimizar la extraccion de datos.<br>
 **Procesamiento en paralelo:**  Se usa la clase **ThreadPoolExecutor** de la libreria *concurrent.futures* para facilitar la ejección de tareas en paralelo. Esta clase crear un pool con 10 hilos de trabajo, este es un parametro que acepta la clase.Entonces las tareas que se envian a esta clase se distirbuyen en los 10 hilos generados, extrayendo la data de manera independiente y simultanea. ***Con este proceso se logro una optimizacion del tiempo de procesamiento de 6 minutos a 7 segundos.***
 5. Se llama la funcion *write_to_csv* para generar el csv.
-6. Se llama la funcion *insert_into_database* para insertar los items en la base de datos PostgreSQL <br> ![etl_process](resources\data_into_database.png)
+6. Se llama la funcion *insert_into_database* para insertar los items en la base de datos PostgreSQL <br> ![etl_process](resources/data_into_database.png)
 
 
 ## Estructura repositorio
