@@ -38,7 +38,7 @@ La función `get_item_details` obtiene los detalles de un item especifico desde 
 ## Orquestación de procesos
 La función principal del proyecto se encuentra en el archivo `extract_item_data.py`. Esta función invoca a las funciones que extraen los datos de la API de Mercado libre descritas anteriormente, procesa los detalles de los ítems en paralelo y almacena los resultados en un archivo CSV y en una base de datos PostgreSQL. 
 
-![etl_process](resources\etl_process.png)
+![etl_process](resources/etl_process.png)
 
 El archivo `functions.py` almacena las funciones:
 
