@@ -3,7 +3,6 @@
 -- Descripción: Define el esquema 'ecommerce' y la tabla 'mercado_libre_items' 
 --              para almacenar información de productos de Mercado Libre.
 -- ============================================================================
-CREATE DATABASE IF NOT EXISTS transactional_core;
 -- (A) Generar una funcion de borrado si existen las tablas y el schema, con este proceso 
 --     se garantiza empezar limpio.
 DROP TABLE IF EXISTS ecommerce.mercado_libre_items CASCADE;

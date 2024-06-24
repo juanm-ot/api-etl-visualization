@@ -4,7 +4,18 @@
 --              adecuados para interactuar con la base de datos transactional_core,
 --              el esquema public y ecommerce.
 -- ============================================================================
-CREATE USER cnxuser WITH PASSWORD 'cnx_password';
+-- (A) Verificar si el usuario cnxuser existe y eliminarlo si es necesario
+DO $$
+BEGIN
+    IF EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'cnxuser') THEN
+        EXECUTE 'DROP ROLE cnxuser';
+        RAISE NOTICE 'El usuario cnxuser ha sido eliminado.';
+    END IF;
+END $$;
+
+-- (B) Crear el usuario cnxuser con la contraseña especificada
+CREATE USER cnxuser WITH PASSWORD 'cnx_password'
+
 
 -- ----------------------------------------------------------------------------
 -- Conceder Permisos
